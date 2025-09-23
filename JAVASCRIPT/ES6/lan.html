@@ -6,12 +6,15 @@
     <title>Document</title>
   </head>
   <body>
-    <p id="adi"></p>
+    <input type="text" name="" id="in" />
+    <button onclick="abes()">Click</button>
+    <p id="para"></p>
     <script>
-      function multiply(a, b = 1) {
-        return a * b;
+      function abes() {
+        let inputfield = document.getElementById("adi");
+        let value = inputfield.value;
+        document.getElementById("aaa").innerHTML = value;
       }
-      document.write(multiply(5));
     </script>
   </body>
 </html>
