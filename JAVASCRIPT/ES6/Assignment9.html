@@ -1,9 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Simple Resume Builder</title>
   </head>
-  <body></body>
+  <body>
+    <h2>Resume Builder</h2>
+
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQZEaVPzMRtF2rxE8E11Xu0oHJFQ9T6DkHQQ&s"
+      height="100px"
+    />
+    <div id="inputs">
+      <label>Name:</label><br />
+      <input type="text" id="name" placeholder="Enter your name" /><br /><br />
+
+      <label>Degree:</label><br />
+      <input type="text" id="degree" placeholder="B.Tech in CSE" /><br /><br />
+
+      <label>Known Languages:</label><br />
+      <input
+        type="text"
+        id="languages"
+        placeholder="English, Hindi"
+      /><br /><br />
+
+      <button onclick="generateResume()">Generate Resume</button>
+    </div>
+
+    <hr />
+
+    <div id="resume" style="display: none">
+      <h3>Resume Preview</h3>
+      <p><b>Name:</b> <span id="outName"></span></p>
+      <p><b>Degree:</b> <span id="outDegree"></span></p>
+      <p><b>Known Languages:</b> <span id="outLang"></span></p>
+    </div>
+
+    <script>
+      function generateResume() {
+        document.getElementById("outName").textContent =
+          document.getElementById("name").value;
+        document.getElementById("outDegree").textContent =
+          document.getElementById("degree").value;
+        document.getElementById("outLang").textContent =
+          document.getElementById("languages").value;
+
+        document.getElementById("inputs").style.display = "none";
+        document.getElementById("resume").style.display = "block";
+      }
+    </script>
+  </body>
 </html>
