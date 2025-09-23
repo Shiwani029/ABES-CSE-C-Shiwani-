@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Color Buttons</title>
+  <style>
+    .controls{display:flex; gap:10px}
+    .btn-green{background:green;color:white}
+    .btn-yellow{background:yellow;color:black}
+    .btn-pink{background:pink; color:white}
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <button class="btn-green" data-color="green">Green</button>
+    <button class="btn-yellow" data-color="yellow">Yellow</button>
+    <button class="btn-pink" data-color="pink">Pink</button>
+  </div>
+
+  <script>
+    const controls=document.querySelector('.controls');
+    function setBg(e){
+      const btn=e.target.closest('button');
+      if(!btn)return;
+      document.body.style.backgroundColor=btn.dataset.color;
+    }
+    controls.addEventListener('click',setBg);
+    controls.addEventListener('touchstart',setBg);
+  </script>
+</body>
+</html>

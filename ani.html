@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moving Image</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+    img {
+      width: 200px;
+      position: relative;
+      animation: moveLR 4s linear infinite alternate;
+    }
+    @keyframes moveLR {
+      0%   { left: 0; }
+      100% { left: 60%; }
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOMW4V9pwRzqkEgzfoyfTDDBJdoWS-5wB5bQ&s" alt="Moving Image">
+</body>
+</html>

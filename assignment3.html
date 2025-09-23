@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Cards</title>
+  <style>
+    .cards {
+      display: flex;
+      gap: 20px;           /* space between cards */
+      justify-content: center;
+    }
+    .card {
+      border: 1px solid black;
+      padding: 10px;
+      width: 200px;
+    }
+    .title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Popular Dishes</h1>
+
+  <div class="cards">
+    <div class="card">
+      <img src="https://www.southernliving.com/thmb/H04pCVJ5bLAnwPs2hFCmpNs5Uec=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ultimate-southern-burger_batch64_beauty01-86-b9c26e256dd34e39b6c0cfb0c02a9fef.jpg" height="100px" width="200px">
+      <div class="title">Burger</div>
+      <p>Soft bun with patty and cheese.</p>
+      <p>Price: ₹149</p>
+      <button>Add</button>
+    </div>
+
+    <div class="card">
+     <img src="https://www.saveur.com/uploads/2013/04/JTPSD2ONPYISBHIP4CJ5HDW55A_01.webp?auto=webp" height="100px" width="200px">
+      <div class="title">Pizza</div>
+      <p>Cheesy base with toppings.</p>
+      <p>Price: ₹249</p>
+      <button>Add</button>
+    </div>
+
+    <div class="card">
+      <img src="https://www.justataste.com/wp-content/uploads/2009/01/best-basil-pesto-pasta.jpg" height="100px" width="200px">
+      <div class="title">Pasta</div>
+      <p>Creamy pasta with sauce.</p>
+      <p>Price: ₹199</p>
+      <button>Add</button>
+    </div>
+  </div>
+</body>
+</html>

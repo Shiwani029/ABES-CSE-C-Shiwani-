@@ -1,196 +1,98 @@
-<!-- <!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Counter App Card</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #f5f5f5;
-        margin: 0;
-      }
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Counter App</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial;
+    }
+  .logo {
+    width: 80px;
+    height: 80px;
+    display: flex;
+  }
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-      .card {
-        width: 280px;
-        padding: 20px;
-        border-radius: 12px;
-        background: #fff;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-      }
-
-      .title {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 15px;
-      }
-
-      .title img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-
-      .title h2 {
-        margin: 0;
-        color: #333;
-        font-size: 22px;
-      }
-
-      .counter {
-        font-size: 30px;
-        margin: 20px 0;
-        font-weight: bold;
-        color: #199e2f;
-      }
-
-      .buttons {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .buttons button {
-        padding: 10px 20px;
-        font-size: 18px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: 0.2s;
-      }
-
-      .buttons .plus {
-        background-color: #1c62ad;
-        color: white;
-      }
-
-      .buttons .minus {
-        background-color: #dc3545;
-        color: white;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="card">
-      <div class="title">
-        <img
-          src="data:image/png;base64,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"
-          alt="Logo"
-        />
-        <h2>Counter App</h2>
-      </div>
-      <div class="counter" id="counterValue">0</div>
-      <div class="buttons">
-        <button class="minus" onclick="decrease()">-</button>
-        <button class="plus" onclick="increase()">+</button>
-      </div>
+    .card {
+      width: 300px;
+      height: 300px;
+      border: 1px solid palevioletred;
+      background-color: papayawhip;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .count {
+      font-size: 40px;
+      text-align: center;
+    }
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+    button {
+      width: 50px;
+      height: 35px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <div class="logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSswPcpa8fzPcz9H-5bbXpOfPOCE8oKs_EQ9Q&s"> </div>
+      <div>Counter App</div>
     </div>
 
-    <script>
-      let counter = 0;
+    <div class="count" id="count">0</div>
 
-      function updateCounter() {
-        document.getElementById("counterValue").textContent = counter;
-      }
-
-      function increase() {
-        if (counter < 10) {
-          counter++;
-          updateCounter();
-          if (counter === 10) {
-            alert("Limit reached: 10");
-          }
-        }
-      }
-
-      function decrease() {
-        if (counter > 0) {
-          counter--;
-          updateCounter();
-          if (counter === 0) {
-            alert("Minimum reached: 0");
-          }
-        }
-      }
-    </script>
-  </body>
-</html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Two Cards Layout</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        display: flex;
-        height: 100vh;
-      }
-
-      .card {
-        flex: 1; /* Each card will take half of the page */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid #ddd;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .left-card img {
-        max-width: 80%;
-        max-height: 80%;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      }
-
-      .right-card button {
-        padding: 12px 25px;
-        font-size: 16px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-      }
-
-      .right-card button:hover {
-        background-color: #0056b3;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Left Card (Image) -->
-    <div class="card left-card">
-      <img
-        id="myImage"
-        src="data:image/jpeg;base64,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"
-        alt="Sample Image"
-      />
+    <div class="controls">
+      <button id="decr">-</button>
+      <button id="incr">+</button>
     </div>
+  </div>
 
-    <!-- Right Card (Button) -->
-    <div class="card right-card">
-      <button onclick="hideImage()">Hide</button>
-    </div>
+  <script>
+    const countEl = document.getElementById('count')
+    const incr = document.getElementById('incr')
+    const decr = document.getElementById('decr')
 
-    <script>
-      function hideImage() {
-        document.getElementById("myImage").style.display = "none";
+    let value = 0
+
+    incr.onclick = function() {
+      if (value >= 10) {
+        alert('Maximum limit reached')
+        return
       }
-      function showImage() {
-        document.getElementById("myImage").style.display = "";
+      value++
+      countEl.textContent = value
+    }
+
+    decr.onclick = function() {
+      if (value <= 0) {
+        alert('No further value')
+        return
       }
-    </script>
-  </body>
+      value--
+      countEl.textContent = value
+    }
+  </script>
+</body>
 </html>

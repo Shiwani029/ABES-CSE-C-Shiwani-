@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let n = prompt("enter the number");
+      let m = prompt("enter the number");
+      console.log(`Table of ${n}`);
+      let Even = [];
+      let Odd = [];
+      for (let i = 1; i <= 10; i++) {
+        console.log(i * n);
+        console.log(i * m);
+        if ((i * n) % 2 === 0) {
+          Even.push(i * n);
+        } else {
+          Odd.push(i * n);
+        }
+
+        if ((i * m) % 2 === 0) {
+          Even.push(i * m);
+        } else {
+          Odd.push(i * m);
+        }
+      }
+      console.log(`Table of ${m}`);
+      for (let i = 1; i <= 10; i++) {
+        console.log(i * m);
+      }
+      console.log(Even);
+      console.log(Odd);
+    </script>
+  </body>
+</html>

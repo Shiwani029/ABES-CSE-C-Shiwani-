@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Card Toggle</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 300px;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      transition: opacity 0.3s ease;
+    }
+
+    .card img.hidden {
+      opacity: 0;
+      height: 0;
+      visibility: hidden;
+    }
+
+    .card button {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+      font-size: 16px;
+      border-top: 1px solid #eee;
+    }
+
+    .card button:hover {
+      background-color: #0056b3;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img id="cardImage" src="https://imgs.search.brave.com/894nKrqIZQo4TWXSMDAdo-nsWLtM2w3HM1Y1UN0gCok/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS12ZWN0/b3IvY3V0ZS10ZWRk/eS1iZWFyLWZhbWls/eS1ncmVldGluZy1j/YXJ0b29uLWRvb2Rs/ZV80MDU2NC00MTku/anBnP3NlbXQ9YWlz/X2h5YnJpZCZ3PTc0/MCZxPTgw" alt="Card Image">
+    <button onclick="toggleImage()">Hide Image</button>
+  </div>
+
+  <script>
+    function toggleImage() {
+      const img = document.getElementById("cardImage");
+      const button = document.querySelector(".card button");
+      img.classList.toggle("hidden");
+
+      if (img.classList.contains("hidden")) {
+        button.textContent = "Show Image";
+      } else {
+        button.textContent = "Hide Image";
+      }
+    }
+  </script>
+
+</body>
+</html>

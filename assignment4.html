@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flipkart Clone</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f1f3f6;
+    }
+
+   
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #2874f0;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .navbar h1 {
+      font-size: 22px;
+    }
+
+    .navbar input {
+      width: 40%;
+      padding: 6px;
+      border: none;
+      border-radius: 2px;
+    }
+
+    .navbar .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar .menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+ 
+    .categories {
+      display: flex;
+      justify-content: space-around;
+      background-color: white;
+      padding: 15px 0;
+    }
+
+    .categories div {
+      text-align: center;
+    }
+
+    .categories img {
+      width: 50px;
+      height: 50px;
+      display: block;
+      margin: auto;
+    }
+
+    .banner {
+      margin: 10px;
+    }
+
+    .banner img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+     .banner1 {
+      margin: 10px;
+    }
+
+    .banner1 img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .search-wrapper {
+  position: relative;
+  width: 40%;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 8px 12px 8px 40px; 
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  background-color: #eef2fb; 
+  color: #333;
+}
+
+.search-wrapper input::placeholder {
+  color: #8c8c8c;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  fill: #888;
+  pointer-events: none; 
+}
+
+    
+  </style>
+</head>
+<body>
+    <div class="navbar">
+      
+  <h1>Flipkart</h1>
+  
+  <div class="search-wrapper">
+    <svg class="search-icon" viewBox="0 0 24 24">
+      <path d="M10 2a8 8 0 015.292 13.707l4 4-1.414 1.414-4-4A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"/>
+    </svg>
+    <input type="text" placeholder="Search for products, brands and more" />
+  </div>
+
+  <div class="menu">
+    <a href="#">Login</a>
+    <a href="#">Cart</a>
+    <a href="#">Become a Seller</a>
+  </div>
+</div>
+
+  
+  
+  <div class="categories">
+    <div>
+      <img src="https://media.licdn.com/dms/image/v2/D4D12AQG0NMBwOtr-IA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1712297539871?e=2147483647&v=beta&t=E-ccKcy0Sr4Nz5NqcEM0sW70Pc6w-tB1_PucQjjN3OM" alt="Mobiles">
+      <p>Mobiles</p>
+    </div>
+    <div>
+      <img src="https://sourcingjournal.com/wp-content/uploads/2022/09/blumarine-rtw-ss2023-004.jpeg?w=492&h=656&crop=1" alt="Fashion">
+      <p>Fashion</p>
+    </div>
+    <div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa0rKMjZz8CQgJY7XXpyzeEDjqTzKphq8hJw&s" alt="Electronics">
+      <p>Electronics</p>
+    </div>
+    <div>
+      <img src="https://5.imimg.com/data5/SELLER/Default/2024/12/470845544/YN/ID/QO/186724743/furniture-design-service.jpeg" alt="Home">
+      <p>Home & furniture</p>
+    </div>
+     <div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa0rKMjZz8CQgJY7XXpyzeEDjqTzKphq8hJw&s" alt="Electronics">
+      <p>Electronics</p>
+    </div>
+    <div>
+      <img src="https://5.imimg.com/data5/SELLER/Default/2024/12/470845544/YN/ID/QO/186724743/furniture-design-service.jpeg" alt="Home">
+      <p>Home & furniture</p>
+    </div>
+   
+   
+  </div>
+
+  
+  <div class="banner">
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/2020/340/image/bb28e964e3ab3f7c.jpg?q=60" alt="Big Sale Banner">
+  </div>
+
+  
+    <div class="banner1">
+    <img src="https://rukminim2.flixcart.com/fk-p-flap/2000/280/image/c6e003e409dd71c8.jpg?q=60" alt="Big Sale Banner">
+  </div>
+
+  
+  </div>
+
+</body>
+</html>

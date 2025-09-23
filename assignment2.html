@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking System</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2><em>Welcome to Bus Booking System</em></h2>
+    
+    <table>
+        <tr>
+            <th colspan="2">Bus Seat Book</th>
+        </tr>
+        <tr>
+            <td colspan="2"><img src="bus-image.jpg" alt="Bus Image" style="width:100%;"></td>
+        </tr>
+        <tr>
+            <td>User Name:</td>
+            <td><input type="text" id="username" name="username"></td>
+        </tr>
+        <tr>
+            <td>User Password:</td>
+            <td><input type="password" id="password" name="password"></td>
+        </tr>
+        <tr>
+            <td>User Gender:</td>
+            <td>
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+            </td>
+        </tr>
+        <tr>
+            <td>User Select City:</td>
+            <td>
+                <select id="city" name="city">
+                    <option value="your-city">Your City</option>
+                     <option value="your-city">Your City</option>
+                  
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <button type="submit">Seat Book</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

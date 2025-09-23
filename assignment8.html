@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products Demo</title>
+  <style>
+    body {
+      background-color: #6c6c65;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      height: 100vh;
+    }
+    /* Left side cards */
+    #main-card {
+      background-color: #0b0909;
+      color: azure;
+      width: 40%;
+      border-right: 2px solid #333;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    #card {
+      background-color: #f1f1f1;
+      height: 250px;
+      width: 200px;
+      border-radius: 10px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #card img {
+      width: 180px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover { background-color: #1976d2; }
+
+    /* Right side products */
+    #products-section {
+      flex: 1;
+      background: #f4f4f4;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    h1 { text-align: center; margin-bottom: 20px; }
+    #products {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .product {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      width: 220px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    .product img {
+      width: 200px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="main-card">
+    <div id="card">
+      <img src="https://imgs.search.brave.com/1lSQ7ncgOZ7pwrTWFGIO7K2Nr_m-Aatdp9WVEreWpFA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTA5/NzMzMjg4NC9waG90/by9leWVsYXNoLW1h/c2NhcmEuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPVB0MnZN/c2dPT3NXbGtrV2s3/WllNanRaX2NXWGFD/N3IwTkZFN001WjdE/akE9" alt="">
+      <button onclick="showProducts('Mascara')">Explore</button>
+    </div>
+    <div id="card">
+      <img src="https://imgs.search.brave.com/EJlCEjXPT2Qqgv5g1q23bR64_fDIr8EW2y3ncKVv7QE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAyNC8w/Mi8yMS8xMy8xNS9s/aXBzdGljay04NTg3/NzA3XzEyODAuanBn" alt="">
+      <button onclick="showProducts('Lipstick')">Explore</button>
+    </div>
+    <div id="card">
+      <img src="https://imgs.search.brave.com/knhqpklQIxUtLz9AnV8Nl25s_PLUofBE4aEdAlsDoco/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL1Mv/YXBsdXMtbWVkaWEt/bGlicmFyeS1zZXJ2/aWNlLW1lZGlhLzRk/NGYyNGJiLWJkYjct/NDc0OC1hZGMwLWE4/NDdkOWQyY2VlYi5f/X0NSMCwwLDk3MCw2/MDBfUFQwX1NYOTcw/X1YxX19fLnBuZw" alt="">
+      <button onclick="showProducts('Blush')">Explore</button>
+    </div>
+  </div>
+
+  <!-- Right side -->
+  <div id="products-section">
+    <h1 id="category-title">Select a Category</h1>
+    <div id="products"></div>
+  </div>
+
+  <script>
+    const data = {
+      "Lipstick": [
+        { "name": "MAC Ruby Woo", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBGweohi0TIKOFjwB0nV2Kn8DXBnWwaB4Dgg&s", "info": "Classic matte red lipstick." },
+        { "name": "Maybelline SuperStay", "image": "https://m.media-amazon.com/images/I/61U1sSnXSZL._UF350,350_QL80_.jpg", "info": "Affordable long-lasting lipstick." },
+        { "name": "Dior Addict", "image": "https://rukminim2.flixcart.com/image/704/844/k5h2jrk0/lipstick/v/b/a/3-5-lipstick-dior-addict-original-imafz5myfvhdx8cq.jpeg?q=90&crop=false", "info": "Luxury hydrating lipstick." }
+      ],
+      "Mascara": [
+        { "name": "L'Oreal Voluminous", "image": "https://images-cdn.ubuy.co.in/656e400c9434192acb185356-l-oreal-paris-voluminous-original.jpg", "info": "Adds volume and length." },
+        { "name": "Maybelline Lash Sensational", "image": "https://images-cdn.ubuy.co.in/66522b182c515c1b226003d7-maybelline-lash-sensational-luscious.jpg", "info": "Fan effect mascara with curved brush." },
+        { "name": "Benefit They're Real", "image": "https://images-cdn.ubuy.co.in/6492f23d9a403112d64a33bf-benefit-cosmetics-they-39-re-real.jpg", "info": "Lengthens and curls lashes." }
+      ],
+      "Blush": [
+        { "name": "NARS Orgasm", "image": "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000000494434088/XWC4mM1RVU-000000000494434088_2.jpg", "info": "Peachy pink blush with shimmer." },
+        { "name": "Milani Rose Powder", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkGh4pccnwQl8b4PXfC3nuBhtBgZojIqXWHg&s", "info": "Affordable and long-lasting blush." },
+        { "name": "Charlotte Tilbury", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJi1-4ErDQQN6VL79aX6yrcIJDEMcx87qwbA&s", "info": "Luxury blush with glowing finish." }
+      ]
+    };
+
+    function showProducts(category) {
+      document.getElementById("category-title").innerText = category + " Products";
+      const container = document.getElementById("products");
+      container.innerHTML = ""; // clear old
+      data[category].forEach(p => {
+        const div = document.createElement("div");
+        div.classList.add("product");
+        div.innerHTML = `
+          <img src="${p.image}" alt="${p.name}">
+          <h3>${p.name}</h3>
+          <p>${p.info}</p>
+        `;
+        container.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>
